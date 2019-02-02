@@ -1,5 +1,4 @@
 
-predictStateIteration1(chanceMatrix,3  )
 
 predictStateIteration1 <- function(chanceMatrix,previousState){  # For the first iteration
   
@@ -34,13 +33,13 @@ fillNA_First_Iteration<-function(matrix,chanceMatrix,indexSet){
   print(indexSet)
   
   for( elm in indexSet ){
-      print("Heyyyyyyyyyyyyyyyyy") 
+      print(paste0( " Missed NA is in index: ", elm  )) 
     if(elm<nrow(matrix))  
       matrix[elm] <- predictStateIteration1(chanceMatrix, 0)   # There is no previous state
     else 
       matrix[elm] <- predictStateIteration1(chanceMatrix, matrix[elm-5])  # The previous state exist in -5 indices before
     
   }
-  #  matrix
+  matrix
     
 }
