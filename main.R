@@ -29,7 +29,7 @@ psiNew
 
 
 
-#For any given state (1,2,or 3) there might be 3 different range of probabilities.
+#For any given state (1,2,or 3) there might be 3 different range of probabilities. # Test 2  Tested and worked well
 
 
 chanceMatrix<-obtainChanceMatrix(psiNew)
@@ -42,10 +42,10 @@ chanceMatrix
 # 1. Generate a random number
 # 2. Use the ***chance matrix*** , to predict the proper state for the missed entery. 
 # 3. Fill the NAs with proper state
+fillNA_First_Iteration(mat,chanceMatrix,indexSet )
 
 
-
-mat<-fillNA_First_Iteration(mat,chanceMatrix,indexSet )
+#mat<fillNA_First_Iteration(mat,chanceMatrix,indexSet )  # Test 3
 mat
 
 
