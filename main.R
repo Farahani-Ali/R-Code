@@ -1,4 +1,4 @@
-setwd(".")
+setwd("C:/Users/salma/OneDrive/Desktop/Ali")
 library(MCMCpack)
 source("functions.R")
 source("first_Iteration_function.R")
@@ -10,21 +10,24 @@ source("second_Iteration_functions.R")
 psiLast<-NULL
 psiNew <-NULL
 
-mat<-matrix(sample(1:3,15,replace = T),5,3)
-mat
 
+#mat<-matrix(sample(1:3,15,replace = T),5,3)
+dt<- c(3,2,1,2,3,1,3,3,1,2,1,1,2,2,2)
+mat<- matrix(dt,5,3)
+mat
 #Omit 20% of matrix enteries
 
-indexSet <- selectRandomIndices(mat)
-indexSet
+# indexSet <- selectRandomIndices(mat)
+indexSet <- c(4,7,12)
 mat      <- omitEnteries(mat,indexSet)
 mat
 
-#***Create Transition Matrix (Psi)***
+#***Create Transition Matrix (Psi)***  # Test 1
   
+createTransitionMatrix(mat)
 
-psiNew<-createTransitionMatrix(mat)
-psiNew
+#psiNew<-createTransitionMatrix(mat)
+#psiNew
 
 
 
@@ -68,7 +71,7 @@ printData(psiNew,psiLast,counter)
 
 
 # while(!isPSIsConverged(psiNew,psiLast)){     #if it is not cpnverged then continue until convergance
-for(i in 1:10){
+for(i in 1:3){
   mat <- fillNA_After_First_Iteration(mat,psiNew, indexSet )
   
   psiLast <- psiNew
