@@ -18,7 +18,7 @@ mat
 #Omit 20% of matrix enteries
 
 # indexSet <- selectRandomIndices(mat)
-indexSet <- c(4,7,12)
+indexSet <- c(6,7,12)
 mat      <- omitEnteries(mat,indexSet)
 mat
 
@@ -42,10 +42,11 @@ chanceMatrix
 # 1. Generate a random number
 # 2. Use the ***chance matrix*** , to predict the proper state for the missed entery. 
 # 3. Fill the NAs with proper state
-fillNA_First_Iteration(mat,chanceMatrix,indexSet )
 
 
-#mat<fillNA_First_Iteration(mat,chanceMatrix,indexSet )  # Test 3
+
+
+mat<-fillNA_First_Iteration(mat,chanceMatrix,indexSet )  # Test 3
 mat
 
 
