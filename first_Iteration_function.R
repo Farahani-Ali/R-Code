@@ -1,4 +1,6 @@
 
+predictStateIteration1(chanceMatrix,3  )
+
 predictStateIteration1 <- function(chanceMatrix,previousState){  # For the first iteration
   
   randomNumber<-runif(1) 
@@ -20,7 +22,7 @@ predictStateIteration1 <- function(chanceMatrix,previousState){  # For the first
   else
     state <- 3
   
-  print(paste0("Predicted State"+state))
+  print(paste0("Predicted State",state))
   
   state
 }
@@ -39,6 +41,6 @@ fillNA_First_Iteration<-function(matrix,chanceMatrix,indexSet){
       matrix[elm] <- predictStateIteration1(chanceMatrix, matrix[elm-5])  # The previous state exist in -5 indices before
     
   }
-    matrix
+  #  matrix
     
 }
