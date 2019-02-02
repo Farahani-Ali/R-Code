@@ -22,14 +22,12 @@ fillNA_After_First_Iteration<-function(matrix,psiNew,indexSet){
   print("Matrix Data in Last Iteration")
   print(matrix)
   
-  print("   ")
-  print("   ")
+  print("___________________")
   
   print("New Psi")
   print(psiNew)
   
-  print("   ")
-  print("   ")
+  print("___________________")
   
   for(elm in indexSet){                    # Fill all the NAs
     
@@ -40,7 +38,7 @@ fillNA_After_First_Iteration<-function(matrix,psiNew,indexSet){
     
     
     mul<-psiNew[previousState,] * psiNew[,previouslyPredictedState]
-    chanceMatrix <-cumsum( mul /  sum(mul))
+    chanceMatrix <-cumsum( mul /  sum(mul) )
     
     matrix[elm] <- predictState(chanceMatrix)
   }
@@ -50,10 +48,10 @@ fillNA_After_First_Iteration<-function(matrix,psiNew,indexSet){
   print(matrix)
         
         
-  print("   ")
-  print("   ")
+  print("______________________________________")
+
   
-  #matrix
+  matrix
   
 }
 
@@ -66,15 +64,15 @@ isPSIsConverged<-function(psiNew,psiLast){
 
 printData<-function(psiNew,psiLast,counter){
   
-  print("/////////////////////////////////////////////////////")
+  print("________________________________________________________________________")
   print(paste0("Counter: ",counter   ))  
   
   print("Last PSI")
   print( psiLast)
   
-  
   print("NEW PSI")
   print( psiNew)
+  
   # print("Psi differences")
   # print( abs(psiNew-psiLast)<0.01)
   
@@ -82,6 +80,3 @@ printData<-function(psiNew,psiLast,counter){
   
   
 }
-
-
-

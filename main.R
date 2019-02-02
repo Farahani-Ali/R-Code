@@ -64,16 +64,17 @@ mat
 
 psiLast <-psiNew                      # Store the previous Psi matrix
 psiNew<-createTransitionMatrix(mat)   # Get a new Psi
-counter <- 1
-printData(psiNew,psiLast,counter)
+counter <- 2
+#printData(psiNew,psiLast,counter)
 
 
 
 # while(!isPSIsConverged(psiNew,psiLast)){     #if it is not cpnverged then continue until convergance
 for(i in 1:3){
+  print(paste0(" Counter: ",counter)  )
   mat <- fillNA_After_First_Iteration(mat,psiNew, indexSet )
   
-  print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+  print("///#####################################////")
   
   
   psiLast <- psiNew

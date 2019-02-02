@@ -50,7 +50,7 @@ createStateChangeMatrix<-function(matrix){
 
 createTransitionMatrix <- function(matrix){
   
-  matrix <- createStateChangeMatrix(mat)
+  matrix <- createStateChangeMatrix(matrix)
 
 #  print("Change Matrix Should be tested")
 #  print(matrix)
@@ -73,10 +73,3 @@ obtainChanceMatrix <- function(transitionMatrix){
   chanceMatrix
   
 }
-
-
-
-
-
-
-

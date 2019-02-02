@@ -1,11 +1,12 @@
 
 #predictStateIteration1(chanceMatrix,2)
+
 predictStateIteration1 <- function(chanceMatrix,previousState){  # For the first iteration
   
   randomNumber<-runif(1) 
   state<-NULL
 
-  # print(paste0("Random Number: ", randomNumber)  )
+  print(paste0("Random Number: ", randomNumber)  )
   
   
     
