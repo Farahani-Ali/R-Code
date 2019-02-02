@@ -1,5 +1,5 @@
 
-predictStateIteration1(chanceMatrix,2)
+#predictStateIteration1(chanceMatrix,2)
 predictStateIteration1 <- function(chanceMatrix,previousState){  # For the first iteration
   
   randomNumber<-runif(1) 

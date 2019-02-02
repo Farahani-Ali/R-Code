@@ -2,7 +2,10 @@ predictState <- function(chanceMatrix){
   
   randomNumber<-runif(1) 
   state<-NULL
+
+  print(paste0( "Random Number is: ",randomNumber ))
   
+    
   if( randomNumber < chanceMatrix[1] )
     state <- 1
   else if( chanceMatrix[1] < randomNumber  & randomNumber < chanceMatrix[2] )
@@ -16,6 +19,12 @@ predictState <- function(chanceMatrix){
 
 fillNA_After_First_Iteration<-function(matrix,psiNew,indexSet){
   
+  print("Matrix Data in Last Iteration")
+  print(matrix)
+  
+  print("New Psi")
+  print(psiNew)
+  
   
   for(elm in indexSet){                    # Fill all the NAs
     
@@ -24,14 +33,18 @@ fillNA_After_First_Iteration<-function(matrix,psiNew,indexSet){
     previouslyPredictedState <- matrix[elm]  # previously PREDICTED state
     
     
-    chanceMatrix <-cumsum( psiNew[previousState,] * psiNew[,previouslyPredictedState] / 
-                             sum(psiNew[previousState,] * psiNew[,previouslyPredictedState]))
     
+    mul<-psiNew[previousState,] * psiNew[,previouslyPredictedState]
+    chanceMatrix <-cumsum( mul /  sum(mul))
     
     matrix[elm] <- predictState(chanceMatrix)
   }
   
-  matrix
+  
+  print("Final Matrix")
+  print(matrix)
+  
+  #matrix
   
 }
 

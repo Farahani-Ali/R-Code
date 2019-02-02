@@ -73,12 +73,15 @@ printData(psiNew,psiLast,counter)
 for(i in 1:3){
   mat <- fillNA_After_First_Iteration(mat,psiNew, indexSet )
   
+  print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+  
+  
   psiLast <- psiNew
   psiNew  <- createTransitionMatrix(mat)
   
   
   counter<- counter+1
-  printData(psiNew,psiLast,counter)
+#  printData(psiNew,psiLast,counter)
   
 }
 
