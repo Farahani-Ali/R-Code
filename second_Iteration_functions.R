@@ -22,9 +22,14 @@ fillNA_After_First_Iteration<-function(matrix,psiNew,indexSet){
   print("Matrix Data in Last Iteration")
   print(matrix)
   
+  print("   ")
+  print("   ")
+  
   print("New Psi")
   print(psiNew)
   
+  print("   ")
+  print("   ")
   
   for(elm in indexSet){                    # Fill all the NAs
     
@@ -43,6 +48,10 @@ fillNA_After_First_Iteration<-function(matrix,psiNew,indexSet){
   
   print("Final Matrix")
   print(matrix)
+        
+        
+  print("   ")
+  print("   ")
   
   #matrix
   
