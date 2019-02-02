@@ -22,12 +22,10 @@ indexSet <- c(4,7,12)
 mat      <- omitEnteries(mat,indexSet)
 mat
 
-#***Create Transition Matrix (Psi)***  # Test 1
+#***Create Transition Matrix (Psi)***  # Test 1  Tested and worked well
   
-createTransitionMatrix(mat)
-
-#psiNew<-createTransitionMatrix(mat)
-#psiNew
+psiNew<-createTransitionMatrix(mat)
+psiNew
 
 
 
