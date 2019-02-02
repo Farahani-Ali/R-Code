@@ -69,8 +69,8 @@ counter <- 2
 
 
 
-# while(!isPSIsConverged(psiNew,psiLast)){     #if it is not cpnverged then continue until convergance
-for(i in 1:3){
+ #while(!isPSIsConverged(psiNew,psiLast)){     #if it is not cpnverged then continue until convergance
+#for(i in 1:3){
   print(paste0(" Counter: ",counter)  )
   mat <- fillNA_After_First_Iteration(mat,psiNew, indexSet )
   
@@ -84,8 +84,4 @@ for(i in 1:3){
   counter<- counter+1
 #  printData(psiNew,psiLast,counter)
   
-}
-
-
-
-
+#}
