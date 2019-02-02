@@ -59,7 +59,7 @@ createTransitionMatrix <- function(matrix){
   row2 <- rdirichlet(1, c(matrix[2,1]+1,matrix[2,2]+1,matrix[2,3]+1))
   row3 <- rdirichlet(1, c(matrix[3,1]+1,matrix[3,2]++1,matrix[3,3]+1))
   
-  rbind(row1,row2,row3)                   
+  round(rbind(row1,row2,row3),2)                   
   
 }
 
