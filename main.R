@@ -1,6 +1,7 @@
-setwd("C:/Users/salma/OneDrive/Desktop/Ali")
+setwd("C:/Users/great/Desktop/R-dataSci/Salman/PaitentTracking")
 library(MCMCpack)
 source("functions.R")
+source("basic_dataset.R")
 source("first_Iteration_function.R")
 source("second_Iteration_functions.R")
 
@@ -8,24 +9,18 @@ source("second_Iteration_functions.R")
 ## Generate a random matrix(n,m)
 
 psiLast<-NULL
-psiNew <-NULL
+psiNew <-getFirstPsi()
 
 
 #mat<-matrix(sample(1:3,15,replace = T),5,3)
-dt<- c(3,2,1,2,3,1,3,3,1,2,1,1,2,2,2)
-mat<- matrix(dt,5,3)
-mat
+
+mat<- getMainDataSet()
 #Omit 20% of matrix enteries
 
 # indexSet <- selectRandomIndices(mat)
-indexSet <- c(6,7,12)
+indexSet <- getMissingIndex(mat)
 mat      <- omitEnteries(mat,indexSet)
 mat
-
-#***Create Transition Matrix (Psi)***  # Test 1  Tested and worked well
-  
-psiNew<-createTransitionMatrix(mat)
-psiNew
 
 
 
@@ -69,12 +64,12 @@ counter <- 2
 
 
 
- #while(!isPSIsConverged(psiNew,psiLast)){     #if it is not cpnverged then continue until convergance
+ while(!isPSIsConverged(psiNew,psiLast)){     #if it is not cpnverged then continue until convergance
 #for(i in 1:3){
   print(paste0(" Counter: ",counter)  )
   mat <- fillNA_After_First_Iteration(mat,psiNew, indexSet )
   
-  print("///#####################################////")
+  print("/__________________________________________________________________/")
   
   
   psiLast <- psiNew
@@ -82,6 +77,8 @@ counter <- 2
   
   
   counter<- counter+1
-#  printData(psiNew,psiLast,counter)
+  printData(psiNew,psiLast,counter)
   
-#}
+}
+
+  
