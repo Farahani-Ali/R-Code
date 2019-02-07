@@ -1,9 +1,9 @@
-selectRandomIndices <- function(matrix){
-  size<-round(length(matrix)*0.2)
-  indices<-sort( sample(1:length(matrix),size ))
-  indices
-}
-
+# selectRandomIndices <- function(matrix){
+#   size<-round(length(matrix)*0.2)
+#   indices<-sort( sample(1:length(matrix),size ))
+#   indices
+# }
+# 
 
 
 omitEnteries<- function(matrix,indexes){
@@ -48,12 +48,10 @@ createStateChangeMatrix<-function(matrix){
 }
 
 
-createTransitionMatrix <- function(matrix){
+createTransitionMatrix <- function(matrix){  # obtain psi matrix
   
   matrix <- createStateChangeMatrix(matrix)
 
-#  print("Change Matrix Should be tested")
-#  print(matrix)
     
   row1 <- rdirichlet(1, c(matrix[1,1]+1,matrix[1,2]+1,matrix[1,3]+1))
   row2 <- rdirichlet(1, c(matrix[2,1]+1,matrix[2,2]+1,matrix[2,3]+1))
@@ -63,7 +61,6 @@ createTransitionMatrix <- function(matrix){
   
 }
 
-## I don't understand this obtainchancematrix
 
 obtainChanceMatrix <- function(transitionMatrix){
   

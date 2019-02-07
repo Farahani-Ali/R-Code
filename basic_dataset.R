@@ -1,13 +1,15 @@
 
-setwd("C:/Users/great/Desktop/R-dataSci/Salman/PaitentTracking")
-source("functions.R")
+#source("functions.R")
 
 
 getMainDataSet<-function(){
   
   dt<-getRowData()
-  psi <- getFirstPsi()
-  chanceMatrix <- obtainChanceMatrix( psi  )
+  
+  
+  basicPsi <- getFirstPsi()   # First Psi is created by us 
+  
+  chanceMatrix <- obtainChanceMatrix( basicPsi )
   
   dt<-getFirstCompleteDT(dt,chanceMatrix)
   
@@ -51,10 +53,6 @@ forcastState<-function(chanceMatrix,randomN,dt,row,column){
 
 
 
-
-
-
-
 getFirstCompleteDT<-function(mat,chanceMatrix){
   for (i in 1:nrow(mat)) # row
     for(j in 2:ncol(mat)){    # column
@@ -70,13 +68,13 @@ getFirstCompleteDT<-function(mat,chanceMatrix){
 
 getMissingIndex <- function(mat){
   
-  lowerBound<-nrow(mat)+1
-  upperBound <- length(mat)-nrow(mat) 
+#  lowerBound<-nrow(mat)+1
+#  upperBound <- length(mat)-nrow(mat) 
   
 #  vec<-  sequence(lowerBound, upperBound)   # SHOULD BE CHANGED
   size <- .2*ncol(mat)*nrow(mat)
-  
-  sort(sample (81:1520,size, replace = F))
+  sort(sample (1:length(mat),size, replace = F))
+ # sort(sample (81:1520,size, replace = F))
   
 }
 
