@@ -51,7 +51,7 @@ mat
 
 
 
- while(!isPSIsConverged(psiNew,psiLast)){     #if it is not cpnverged then continue until convergance
+ while(!isPSIsConverged(psiNew,psiLast,0.02)){     #if it is not cpnverged then continue until convergance
    
    psiLast <-psiNew                      # Store the previous Psi matrix
    psiNew<-createTransitionMatrix(mat)   # Get a new Psi

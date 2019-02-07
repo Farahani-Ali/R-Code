@@ -82,21 +82,21 @@ predictState <- function(chanceMatrix){
 
 
 
-isPSIsConverged<-function(psiNew,psiLast){
+isPSIsConverged<-function(psiNew,psiLast,threshold){
   
   print("Difference between 2 last Psies?")
   
   print(abs(psiNew-psiLast))
   
   
-  all(abs(psiNew-psiLast)<0.02)  # return true if all the difference between all the enteries is less than 0.01 
+  all(abs(psiNew-psiLast)<threshold)  # return true if all the difference between all the enteries is less than 0.01 
 }
 
 
 printData<-function(psiNew,psiLast,counter){
   
   print("________________________________________________________________________")
-  print(paste0("Counter: ",counter   ))  
+  print(paste0("Iteration: ",counter   ))  
   
   
   

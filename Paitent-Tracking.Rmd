@@ -22,7 +22,7 @@ Randomly select 0.2 and set NA of to them
 ```{r}
 psiLast<-0
 psiNew <-0
-counter <- 2
+iteration <- 2
 mat<- getMainDataSet()
 indexSet <- getMissingIndex(mat)
 mat      <- omitEnteries(mat,indexSet)
@@ -54,7 +54,8 @@ mat<-fillNA_First_Iteration(mat,chanceMatrix,indexSet )
 Continue until the difference between the 2 last psi become less than 0.02
 
 ```{r}
-while(!isPSIsConverged(psiNew,psiLast)){     #if it is not cpnverged then continue until convergance
+while(!isPSIsConverged(psiNew,psiLast,0.02)){     
+                              #if it is not cpnverged then continue until convergance
    
    psiLast <-psiNew                      # Store the previous Psi matrix
    psiNew<-createTransitionMatrix(mat)   # Get a new Psi
@@ -63,8 +64,8 @@ while(!isPSIsConverged(psiNew,psiLast)){     #if it is not cpnverged then contin
   mat <- fillNA_After_First_Iteration(mat,psiNew, indexSet )
   
   
-  counter<- counter+1
-  printData(psiNew,psiLast,counter)
+  iteration<- iteration+1
+  printData(psiNew,psiLast,iteration)
 
 }
 ```
