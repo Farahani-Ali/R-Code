@@ -99,8 +99,6 @@ printData<-function(psiNew,psiLast,counter){
   print(paste0("Counter: ",counter   ))  
   
   
-  print(paste0("Is it converged? ",isPSIsConverged(psiNew,psiLast)))
-  
   
 }
 
