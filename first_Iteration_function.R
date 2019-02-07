@@ -1,7 +1,4 @@
 
-
-#predict_State_Iteration1(chanceMatrix,2)
-
 predict_State_Iteration1 <-
   function(chanceMatrix, previousState) {     # For the first iteration
     
@@ -46,4 +43,3 @@ fillNA_First_Iteration <- function(matrix, chanceMatrix, indexSet) {
   
 }
 
-# fillNA_First_Iteration(mat,chanceMatrix,indexSet)  To test

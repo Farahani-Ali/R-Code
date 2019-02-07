@@ -22,7 +22,6 @@ fillNA_After_First_Iteration<-function(matrix,psiNew,indexSet){
       
     }
     
-    print(paste0("last missed index is: ",elm))
     chanceMatrix <- getChanceMatrix_After_First_Iteration(matrix,elm,
                                                           previousState,nextState,psiNew)
     
@@ -64,10 +63,6 @@ predictState <- function(chanceMatrix){
   
   randomNumber<-runif(1) 
   state<-NULL
-
-  print("chanceMatrix")
-  print(chanceMatrix)
-  
   
     
   if( randomNumber < chanceMatrix[1] )
@@ -102,12 +97,6 @@ printData<-function(psiNew,psiLast,counter){
   
   print("________________________________________________________________________")
   print(paste0("Counter: ",counter   ))  
-  
-  #print("Last PSI")
- # print( psiLast)
-  
-#  print("NEW PSI")
-#  print( psiNew)
   
   
   print(paste0("Is it converged? ",isPSIsConverged(psiNew,psiLast)))

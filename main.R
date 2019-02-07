@@ -6,7 +6,6 @@ source("first_Iteration_function.R")
 source("after_First_Iteration_functions.R")
 
 
-
 psiLast<-0
 psiNew <-0
 counter <- 2
@@ -36,7 +35,6 @@ chanceMatrix
 mat<-fillNA_First_Iteration(mat,chanceMatrix,indexSet )  
 mat
 
-
 ##########################################################
 ##############     Next Iterations   #####################
 ##########################################################
@@ -54,14 +52,12 @@ mat
 
 
  while(!isPSIsConverged(psiNew,psiLast)){     #if it is not cpnverged then continue until convergance
-#for(i in 1:3){
    
    psiLast <-psiNew                      # Store the previous Psi matrix
    psiNew<-createTransitionMatrix(mat)   # Get a new Psi
     
   
   mat <- fillNA_After_First_Iteration(mat,psiNew, indexSet )
-  
   
   
   counter<- counter+1

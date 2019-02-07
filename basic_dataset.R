@@ -1,7 +1,4 @@
 
-#source("functions.R")
-
-
 getMainDataSet<-function(){
   
   dt<-getRowData()
@@ -68,13 +65,8 @@ getFirstCompleteDT<-function(mat,chanceMatrix){
 
 getMissingIndex <- function(mat){
   
-#  lowerBound<-nrow(mat)+1
-#  upperBound <- length(mat)-nrow(mat) 
-  
-#  vec<-  sequence(lowerBound, upperBound)   # SHOULD BE CHANGED
   size <- .2*ncol(mat)*nrow(mat)
   sort(sample (1:length(mat),size, replace = F))
- # sort(sample (81:1520,size, replace = F))
-  
+
 }
 
