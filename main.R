@@ -61,7 +61,7 @@ mat
   
   
   counter<- counter+1
-  printData(psiNew,psiLast,counter)
+  printData(counter)
 
 }
 

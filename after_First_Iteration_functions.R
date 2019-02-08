@@ -79,9 +79,6 @@ predictState <- function(chanceMatrix){
 
 
 
-
-
-
 isPSIsConverged<-function(psiNew,psiLast,threshold){
   
   print("Difference between 2 last Psies?")
@@ -93,7 +90,7 @@ isPSIsConverged<-function(psiNew,psiLast,threshold){
 }
 
 
-printData<-function(psiNew,psiLast,counter){
+printData<-function(counter){
   
   print("________________________________________________________________________")
   print(paste0("Iteration: ",counter   ))  
