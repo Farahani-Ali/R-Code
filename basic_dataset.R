@@ -17,13 +17,12 @@ getMainDataSet<-function(){
 
 getRowData <-function(){
   
-  rowDt <- matrix(NA,80,19)
+  rowDt <- matrix(NA,80,20)
   
-  states <- 1:3
-  firstcoll <- sample(states, 80, replace = T)
+  rowDt[,1] <- sample(1:3, 80, replace = T) # Set the first column
 
-  
-  cbind(firstcoll,rowDt)
+  rowDt
+
   
 }
 

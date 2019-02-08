@@ -26,7 +26,8 @@ predict_State_Iteration1 <-
 
 fillNA_First_Iteration <- function(matrix, chanceMatrix, indexSet) {
   
-  for (elm in indexSet) 
+  for (elm in indexSet) {
+
     if (elm < nrow(matrix))  # in first column
       
       matrix[elm] <-
@@ -38,6 +39,7 @@ fillNA_First_Iteration <- function(matrix, chanceMatrix, indexSet) {
                                             previousState)  # The previous state exist in -nrow(matrix) indices before
     
     }
+  }
   
   matrix
   
