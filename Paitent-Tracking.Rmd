@@ -54,7 +54,7 @@ mat<-fillNA_First_Iteration(mat,chanceMatrix,indexSet )
 Continue until the difference between the 2 last psi become less than 0.02
 
 ```{r}
-while(!isPSIsConverged(psiNew,psiLast,0.01)){     
+while(!isPSIsConverged(psiNew,psiLast,0.015)){     
                               #if it is not cpnverged then continue until convergance
    
    psiLast <-psiNew                      # Store the previous Psi matrix
@@ -68,6 +68,9 @@ while(!isPSIsConverged(psiNew,psiLast,0.01)){
   printData(iteration)
 
 }
+
+psiLast
+psiNew
 ```
 
 

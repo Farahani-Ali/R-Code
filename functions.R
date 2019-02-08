@@ -23,8 +23,7 @@ stateChangeCounter <- function(matrix, firstState,secondState){
         if(mat[row,col+1]==secondState & 
            mat[row,col]==firstState   )
           sum<-sum+1
-        
-        #      print(paste0(firstState," to ",secondState, " : ", sum))    
+         
         sum    
 }
 
