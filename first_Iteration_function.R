@@ -6,6 +6,7 @@ predict_State_Iteration1 <-
     state <- NULL
     
 
+
     if (previousState == 0)
       state <- sample(1:3, 1)
     
