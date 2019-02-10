@@ -9,6 +9,9 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 setwd("C:/Users/salma/OneDrive/Desktop/PaitentTracking")
 library(MCMCpack)
+library(ggplot2)
+library(readxl)
+Thershold_Iterations <- read_excel("Thershold_Iterations.xlsx")
 source("functions.R")
 source("basic_dataset.R")
 source("first_Iteration_function.R")
@@ -75,6 +78,22 @@ psiLast
 psiNew
 ```
 
+### What is the corelation between the Thershold and the number of iterations?
+
+We have decreased the **Thershold** value from 0.05 to 0.01 with 0.01 steps, and we have run 
+the whole code 5 times for each thershold. So, the below chart shows the result, and then we 
+have obtained a **None linear regression** among the points.
+
+```{r}
+
+
+ggplot(Thershold_Iterations, aes(x=Thershold,
+                                 y=Iterations)) +
+  geom_point() + geom_smooth()
+
+
+
+```
 
 
 
