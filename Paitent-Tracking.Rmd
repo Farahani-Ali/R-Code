@@ -16,7 +16,14 @@ source("functions.R")
 source("basic_dataset.R")
 source("first_Iteration_function.R")
 source("after_First_Iteration_functions.R")
+
 ```
+
+
+![The general flowchart of the solution.](./image/flowchart.jpg)
+
+
+
 
 ## Set up dataset
 
