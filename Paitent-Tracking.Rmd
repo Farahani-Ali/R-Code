@@ -20,7 +20,7 @@ source("after_First_Iteration_functions.R")
 ```
 
 
-![The general flowchart of the solution.](./image/flowchart.jpg)
+
 
 
 
