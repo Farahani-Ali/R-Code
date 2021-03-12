@@ -1,4 +1,4 @@
-setwd("C:/Users/salma/OneDrive/Desktop/PaitentTracking")
+setwd("C:/Users/great/Desktop/R-dataSci/Salman/PaitentTracking")
 library(MCMCpack)
 source("functions.R")
 source("basic_dataset.R")
@@ -51,7 +51,7 @@ mat
 
 
 
- while(!isPSIsConverged(psiNew,psiLast,0.01)){     #if it is not cpnverged then continue until convergance
+ while(!isPSIsConverged(psiNew,psiLast,0.02)){     #if it is not cpnverged then continue until convergance
    
    psiLast <-psiNew                      # Store the previous Psi matrix
    psiNew<-createTransitionMatrix(mat)   # Get a new Psi

@@ -7,7 +7,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-setwd("C:/Users/salma/OneDrive/Desktop/PaitentTracking")
+setwd("C:/Users/great/Desktop/R-dataSci/Salman/PaitentTracking")
 library(MCMCpack)
 library(ggplot2)
 library(readxl)
@@ -18,10 +18,6 @@ source("first_Iteration_function.R")
 source("after_First_Iteration_functions.R")
 
 ```
-
-
-
-
 
 
 
